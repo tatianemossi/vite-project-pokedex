@@ -1,29 +1,4 @@
-import axios, { AxiosResponse } from "axios";
-
-const app = document.getElementById("app") as HTMLDivElement;
-
-function processarImagemComSucesso(resposta: AxiosResponse) {
-  const urlImagem = URL.createObjectURL(resposta.data);
-
-  const img = document.createElement("img");
-  img.src = urlImagem;
-
-  app.appendChild(img);
-}
-
-function processarImagemComFalha(resposta: AxiosResponse) {
-  console.log(resposta);
-}
-
-async function obterImagem(id: number) {
-
-  try {
-    const imagemPokemon = document.getElementById("imagemPokemon") as HTMLImageElement;
-    imagemPokemon.src = `https://assets.pokemon.com/assets/cms2/img/pokedex/full/${id.toString().padStart(3, '0')}.png`;
-  } catch (err) {
-    console.log(err);
-  }
-}
+import axios from "axios";
 
 async function carregarCardPokemon(pokemon: any) {
   try {
@@ -40,8 +15,7 @@ async function carregarCardPokemon(pokemon: any) {
     imagemPokemon.src = `https://assets.pokemon.com/assets/cms2/img/pokedex/full/${pokemon.id.toString().padStart(3, '0')}.png`;
     imagemPokemon.width = 200;
     imagemPokemon.height = 200;
-    debugger;
-
+    
     const tipos = pokemon.types.map(function (type:any) {
       return type.type.name;
     }).join(' | ');
