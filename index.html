@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" href="/public/favicon-16x16.png" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pokédex</title>
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"
+    defer></script>
+
+  <link rel="stylesheet" href="./style.css">
+</head>
+
+<div class="no-select">
+  <img src="./public/Logo-Pokebola-Pokémon-PNG.png" class="drop-shadow w-75">
+</div>
+
+<body>
+  <h2 class="fs-3">Pesquise o seu Pokémon:</h2>
+
+  <form id="formulario">
+    <div>
+      <input class="form-control d-inline" id="txtNome" type="text" placeholder="Nome/Id do Pokémon" />
+      <button class="btn btn-outline-secondary" type="submit" id="btn-pesquisar">
+        <span class="material-icons">Buscar</span>
+      </button>
+    </div>    
+  </form>
+  <div id="app">
+    <card id="cardPokemon">
+      <label id="idPokemon"></label>
+      <label id="nomePokemon"></label>
+      <div><img id="imagemPokemon"/></div>
+      <label id="tipoPokemon"></label>
+    </card>
+  </div>
+  <script type="module" src="/src/index.ts"></script>
+</body>
+
+</html>
